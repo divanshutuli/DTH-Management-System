@@ -7,7 +7,6 @@
 #include<string.h>
 #include<iostream>
 
-
 using namespace std;
 
 int g=0, p=0, n=0, flag=0,y=0;
@@ -421,9 +420,9 @@ class customer
 
 void customer::assignid()
 {
-	srand( (unsigned)time(NULL) );
-	id=rand();
-}
+srand( (unsigned)time(NULL) );
+
+id=rand();}
 
 void customer::accept()
 {
@@ -765,10 +764,11 @@ int checkpass()
 
 int main()
 {
-	system("cls");
+//	clrscr();
 	int choice, temp, res;
 	char ch,ch1,ans='y';
 	x:
+	system("cls");
 	cout<<"\n\t\t\t WELCOME TO myDTH SERVICE\n";
 	do
 	{
