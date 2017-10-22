@@ -1,7 +1,10 @@
-#include<fstream.h>
+#include<fstream>
+#include<iostream>
 #include<conio.h>
-
-void main()
+#include<stdio.h>
+ 
+ using namespace std;
+int main()
 {
 	ofstream fout;
 	fout.open("P3.txt");
@@ -13,5 +16,6 @@ void main()
 	fout<<"SAB"<<'\n';
 	fout.close();
 	cout<<"DONE";
+	return 0;
 	getch();
 }
