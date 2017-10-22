@@ -1,9 +1,12 @@
-#include<fstream.h>
+#include<fstream>
+#include<iostream>
 #include<conio.h>
+ 
+ using namespace std;
+int main()
 
-void main()
 {
-	ofstream fout;
+	ofstream fout;     
 	fout.open("P1.txt");
 	fout<<"Z SPECIAL"<<'\n';
 	fout<<"Z Cinema"<<'\n';
@@ -11,7 +14,7 @@ void main()
 	fout<<"Z World"<<'\n';
 	fout<<"Z Studio"<<'\n';
 	fout<<"Z Regional"<<'\n';
-	fout.close();
 	cout<<"DONE";
+    return 0;
 	getch();
 }

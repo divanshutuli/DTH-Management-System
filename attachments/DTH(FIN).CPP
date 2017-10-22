@@ -1,9 +1,13 @@
 #include<conio.h>
-#include<fstream.h>
+#include<time.h>
+#include<fstream>
 #include<stdio.h>
 #include<stdlib.h>
 #include<process.h>
 #include<string.h>
+#include<iostream>
+
+using namespace std;
 
 int g=0, p=0, n=0, flag=0,y=0;
 void dispallpack();
@@ -42,8 +46,9 @@ package::package()
 
 void package::assign()
 {
-	randomize();
-	p_id=random(1001);
+srand( (unsigned)time(NULL) ); 
+p_id=rand();
+
 }
 
 int package::addch(char s[20], int a)
@@ -181,7 +186,7 @@ int package::addch(char s[20], int a)
 void package::makepackage()
 {
 	ifstream f;
-	clrscr();
+	//clrscr();
 	int num, res, ch, flag=1, choice, o;
 	char str[20];
 	if(n==1)  //global when modify package
@@ -200,7 +205,7 @@ void package::makepackage()
 		cin>>num;
 		for(int j=0; j<num; j++)
 		{
-		 clrscr();
+		 //clrscr();
 		 cout<<"\nDisplaying all packages:";
 		 dispallpack();
 		 cout<<"\nKindly select from which package would you like to add channel from:\t";
@@ -415,9 +420,9 @@ class customer
 
 void customer::assignid()
 {
-	randomize();
-	id=random(9999)+782;
-}
+srand( (unsigned)time(NULL) );
+
+id=rand();}
 
 void customer::accept()
 {
@@ -718,7 +723,7 @@ void deletecust(char *a, char* b, int c)
  	fout.open("temp.dat", ios::binary);
  	while(fin.read((char*)&ob,sizeof(ob)))
  	{
-	 f=1
+	 f=1;
 	 if((strcmpi(a,ob.retf())==0)&&(strcmpi(b,ob.retl())==0)&&(c==ob.retid()))
 	 {
 		f=0;
@@ -757,9 +762,9 @@ int checkpass()
 }
 
 
-void main()
+int main()
 {
-	clrscr();
+//	clrscr();
 	int choice, temp, res;
 	char ch,ch1,ans='y';
 	x:
@@ -773,7 +778,7 @@ void main()
 	 cout<<"\t5. Exit\n";
 	 cout<<"\n\tEnter your option(1/2/3/4/5)\t";
 	 cin>>choice;
-	 clrscr();
+	 //clrscr();
 	 switch(choice)
 	 {
 		case 1:
@@ -957,9 +962,5 @@ void main()
 	 }
 	}while((ans=='y')||(ans=='Y'));
 	getch();
+	return 0;
 }
-
-
-
-
-
